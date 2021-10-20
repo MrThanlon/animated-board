@@ -9,8 +9,8 @@ function setRotate(x, y) {
 }
 function gyro(e) {
   // beta for X, gamma for Y, 0 ~ 360
-  const percentageX = e.beta / 60;
-  const percentageY = e.gamma / 60;
+  const percentageX = e.beta / 30;
+  const percentageY = e.gamma / 30;
   // console.debug(percentageX * 10, percentageY * 10);
   setRotate(percentageX * 10, percentageY * 10);
 }
@@ -22,7 +22,7 @@ if (typeof (DeviceMotionEvent) !== 'undefined') {
       DeviceOrientationEvent.requestPermission().then(g => {
         if (g === 'granted') {
           // success
-          window.addEventListener('deviceorientation', gyro);
+          window.ondeviceorientation = gyro;
         } else {
           alert('需要陀螺仪授权');
         }
@@ -31,7 +31,7 @@ if (typeof (DeviceMotionEvent) !== 'undefined') {
     alert('请点击屏幕任意位置以获得陀螺仪权限');
   } else {
     // android? just use
-    window.addEventListener('deviceorientation', gyro);
+    window.ondeviceorientation = gyro;
   }
 }
 setRotate(0, 0);
