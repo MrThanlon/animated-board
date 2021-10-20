@@ -1,0 +1,32 @@
+#container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+.layer2 {
+  transform: translateZ(15px);
+}
+.layer1 {
+  transform: translateZ(30px);
+}
+.bg {
+  border-radius: 10px;
+  box-shadow: 0 0 15px black;
+}
+.box {
+  width: 600px;
+  height: 245px;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  box-sizing: border-box;
+  transition: transform .1s linear;
+}
+.image {
+  display: block;
+  width: 600px;
+  height: 245px;
+  position: absolute;
+}
