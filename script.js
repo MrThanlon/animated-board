@@ -9,8 +9,8 @@ function setRotate(x, y) {
 }
 function gyro(e) {
   // beta for X, gamma for Y, 0 ~ 360
-  const percentageX = e.beta / 30;
-  const percentageY = e.gamma / 30;
+  const percentageX = e.beta / 10;
+  const percentageY = e.gamma / 10;
   // console.debug(percentageX * 10, percentageY * 10);
   setRotate(percentageX * 10, percentageY * 10);
 }
